@@ -23,5 +23,9 @@ public class PlayerController : MonoBehaviour
         rb2d.position = now;
         // rb2d.AddForce(force * 10);
     }
+    void Update()
+    {
+        transform.Rotate(new Vector3(0, 0, 100) * Time.deltaTime);
+    }
 }
 

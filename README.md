@@ -1,1 +1,1 @@
-# ShitChaseGame
+ライムを集めるゲーム

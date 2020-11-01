@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class HaterController : MonoBehaviour {
     private GameObject playerRb2d;
     private MortionController Mortion;
+
     void Start() {
         playerRb2d = GameObject.Find("Player");;
         Mortion = GetComponent<MortionController>();

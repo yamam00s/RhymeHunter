@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof (MortionController))]
+[RequireComponent(typeof (StartGameController))]
 public class PlayerController : MonoBehaviour {
     private Rigidbody2D rb2D;
     private MortionController Mortion;
@@ -14,6 +15,7 @@ public class PlayerController : MonoBehaviour {
         rb2D = GetComponent<Rigidbody2D>();
         nowPosition = GetComponent<Transform>().position;
         Mortion = GetComponent<MortionController>();
+        Debug.Log(StartGameController.GetDifficulty());
     }
 
     // Update is called once per frame

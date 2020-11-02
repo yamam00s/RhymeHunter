@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof (MortionController))]
-[RequireComponent(typeof (StartGameController))]
+// [RequireComponent(typeof (StartGameController))]
 public class HaterController : MonoBehaviour {
     private GameObject player;
     private MortionController Mortion;

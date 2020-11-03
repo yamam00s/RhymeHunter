@@ -12,11 +12,10 @@ public class HaterController : MonoBehaviour {
     void Start() {
         player = GameObject.Find("Player");
         Mortion = GetComponent<MortionController>();
-        Debug.Log(StartGameController.GetDifficulty());
         // 難易度Easyの場合はHaterを表示しない
-        if (StartGameController.GetDifficulty() == 0) {
-            gameObject.SetActive(false);
-        }
+        //     if (StartGameController.GetDifficulty() == 0) {
+        //         gameObject.SetActive(false);
+        //     }
     }
 
     // Update is called once per frame

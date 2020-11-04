@@ -3,20 +3,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class JsonQuizClass {
-    public string top;
-    public string bottom;
-    public string[] answers;
-    public string correct;
+    public string topLyric;
+    public string bottomLyric;
+    public string[] answersLyrics;
+    public string correctLyric;
 }
 
 [System.Serializable]
 public class MainController : MonoBehaviour {
     public TextAsset quizCsvJson;
+    // public Text topLyricText;
+    // public Text bottomLyricText;
     // private string[] quizItems;
 
     // Start is called before the first frame update
     void Start() {
-        JsonQuizClass inputJsonQuiz = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
+        JsonQuizClass inputQuizJson = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
+        // topLyricText.text = inputQuizJson.topLyric;
+        // bottomLyricText.text = inputQuizJson.bottomLyric;
         // Debug.Log(jsonQuizClass.bottom);
     }
 

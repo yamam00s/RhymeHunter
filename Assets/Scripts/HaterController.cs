@@ -31,6 +31,7 @@ public class HaterController : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo) {
+        MainController.isGameClear = false;
         SceneManager.LoadScene("Result");
     }
 }

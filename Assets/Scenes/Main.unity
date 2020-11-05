@@ -1532,10 +1532,7 @@ MonoBehaviour:
   quizCsvJson: {fileID: 4900000, guid: d416d5d6d0c0a41e795b05e5508dafd0, type: 3}
   topLyricText: {fileID: 1247945006}
   bottomLyricText: {fileID: 609474067}
-  Answer1: {fileID: 304453292}
-  Answer2: {fileID: 369429816}
-  Answer3: {fileID: 1804409975}
-  Answer4: {fileID: 1530871207}
+  answers: {fileID: 307032164}
 --- !u!4 &1560324236
 Transform:
   m_ObjectHideFlags: 0

@@ -15,20 +15,19 @@ public class MainController : MonoBehaviour {
     public TextAsset quizCsvJson;
     public Text topLyricText;
     public Text bottomLyricText;
-    public Text Answer1;
-    public Text Answer2;
-    public Text Answer3;
-    public Text Answer4;
+    public GameObject answers;
 
     // Start is called before the first frame update
     void Start() {
         JsonQuizClass inputQuizJson = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
         topLyricText.text = inputQuizJson.topLyric;
         bottomLyricText.text = inputQuizJson.bottomLyric;
-        Answer1.text = inputQuizJson.answersLyric[0];
-        Answer2.text = inputQuizJson.answersLyric[1];
-        Answer3.text = inputQuizJson.answersLyric[2];
-        Answer4.text = inputQuizJson.answersLyric[3];
+        Text[] answersText = answers.GetComponentsInChildren<Text>();
+        int index = 0;
+        foreach(Text answer in answersText) {
+            answer.text = inputQuizJson.answersLyric[index]; d
+            index++;
+        }
     }
 
     // // Update is called once per frame

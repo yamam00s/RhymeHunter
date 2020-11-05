@@ -17,6 +17,7 @@ public class MainController : MonoBehaviour {
     public Text bottomLyricText;
     public GameObject answers;
     public static string correctLyric;
+    public static bool isGameClear;
 
 
     // Start is called before the first frame update

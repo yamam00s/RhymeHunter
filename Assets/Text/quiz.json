@@ -2,5 +2,5 @@
   "topLyric": "上段テキスト",
   "bottomLyric": "下段テキスト",
   "answersLyric": ["答え1", "答え2", "答え3", "答え4"],
-  "correctLyric": "答え3"
+  "correctLyric": "答え2"
 }

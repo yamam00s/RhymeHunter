@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof (MortionController))]
 public class PlayerController : MonoBehaviour {
@@ -46,6 +47,12 @@ public class PlayerController : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D answer) {
         string getAnsweText = answer.gameObject.GetComponent<Text>().text;
+        if (getAnsweText == MainController.correctLyric) {
+            MainController.isGameClear = true;
+        } else {
+            MainController.isGameClear = false;
+        }
+        SceneManager.LoadScene("Result");
     }
 
     void MovePlayer(Vector2 direction) {

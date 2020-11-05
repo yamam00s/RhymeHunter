@@ -44,6 +44,10 @@ public class PlayerController : MonoBehaviour {
 		}
     }
 
+    void OnCollisionEnter2D(Collision2D answer) {
+        string getAnsweText = answer.gameObject.GetComponent<Text>().text;
+    }
+
     void MovePlayer(Vector2 direction) {
         nowPosition = rb2D.transform.position;
         Vector2 force = nowPosition + direction;

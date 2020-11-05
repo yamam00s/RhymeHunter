@@ -16,6 +16,8 @@ public class MainController : MonoBehaviour {
     public Text topLyricText;
     public Text bottomLyricText;
     public GameObject answers;
+    public static string correctLyric;
+
 
     // Start is called before the first frame update
     void Start() {
@@ -28,6 +30,7 @@ public class MainController : MonoBehaviour {
             answer.text = inputQuizJson.answersLyric[index];
             index++;
         }
+        correctLyric = inputQuizJson.correctLyric;
     }
 
     // // Update is called once per frame

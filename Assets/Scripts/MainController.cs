@@ -25,7 +25,7 @@ public class MainController : MonoBehaviour {
         Text[] answersText = answers.GetComponentsInChildren<Text>();
         int index = 0;
         foreach(Text answer in answersText) {
-            answer.text = inputQuizJson.answersLyric[index]; d
+            answer.text = inputQuizJson.answersLyric[index];
             index++;
         }
     }

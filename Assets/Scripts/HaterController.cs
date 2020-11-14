@@ -37,7 +37,7 @@ public class HaterController : MonoBehaviour {
     }
 
     void OnCollisionEnter2D(Collision2D collisionInfo) {
-        if (collisionInfo.gameObject.tag == "Wall") {
+        if (collisionInfo.gameObject.tag != "Player") {
             return;
         }
 

@@ -45,10 +45,12 @@ public class PlayerController : MonoBehaviour {
 		}
     }
 
-    void OnCollisionEnter2D(Collision2D answer) {
-        if (answer.gameObject.tag == "Wall") return;
+    void OnCollisionEnter2D(Collision2D collisionInfo) {
+        if (collisionInfo.gameObject.tag != "Answer") {
+            return;
+        }
 
-        string getAnsweText = answer.gameObject.GetComponent<Text>().text;
+        string getAnsweText = collisionInfo.gameObject.GetComponent<Text>().text;
         if (getAnsweText == MainController.correctLyric) {
             MainController.isGameClear = true;
         } else {

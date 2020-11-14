@@ -17,9 +17,16 @@ public class HaterController : MonoBehaviour {
         spanTime = 3f;
         currentTime = 0f;
         // 難易度Easyの場合はHaterを表示しない
-        //     if (StartGameController.GetDifficulty() == 0) {
-        //         gameObject.SetActive(false);
-        //     }
+        if (StartGameController.GetDifficulty() == 0) {
+            gameObject.SetActive(false);
+        }
+
+        // 難易度で敵の速度変更
+        if (StartGameController.GetDifficulty() == 2) {
+            spanTime = 2f;
+        } else {
+            spanTime = 3f;
+        }
     }
 
     // Update is called once per frame

@@ -4,8 +4,10 @@ using UnityEngine.UI;
 
 public class ResultGameController : MonoBehaviour {
     public Text resultStatusText;
+    public Text resultLyricText;
 
     void Start() {
+        resultLyricText.text = MainController.getResultLyric();
         if (MainController.getIsGameClear()) {
             resultStatusText.text = "Game Clear";
         } else {

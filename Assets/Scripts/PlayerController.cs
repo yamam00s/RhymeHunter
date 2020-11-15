@@ -56,6 +56,7 @@ public class PlayerController : MonoBehaviour {
         } else {
             MainController.setIsGameClear(false);
         }
+        MainController.setResultLyric(getAnsweText);
         SceneManager.LoadScene("Result");
     }
 

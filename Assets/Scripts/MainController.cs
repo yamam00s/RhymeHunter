@@ -18,6 +18,7 @@ public class MainController : MonoBehaviour {
     public GameObject answers;
     public static string correctLyric;
     public static bool isGameClear;
+    public static string resultLyric;
 
     // Start is called before the first frame update
     void Start() {
@@ -31,10 +32,18 @@ public class MainController : MonoBehaviour {
             index++;
         }
         correctLyric = inputQuizJson.correctLyric;
+        resultLyric = topLyricText.text + "\n" + bottomLyricText.text;
     }
 
     public static string getCorrectLyric() {
 		return correctLyric;
+	}
+
+    public static void setResultLyric(string selectedLyric) {
+		resultLyric += selectedLyric;
+	}
+    public static string getResultLyric() {
+		return resultLyric;
 	}
 
     public static void setIsGameClear(bool isClear) {

@@ -37,8 +37,8 @@ public class MainController : MonoBehaviour {
 		return correctLyric;
 	}
 
-    public static void setIsGameClear(bool isGameClear) {
-		isGameClear = isGameClear;
+    public static void setIsGameClear(bool isClear) {
+		isGameClear = isClear;
 	}
     public static bool getIsGameClear() {
 		return isGameClear;

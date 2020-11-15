@@ -15,8 +15,7 @@ public class MortionController : MonoBehaviour {
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    public void MoveDirection(float x, float y) {
+    public void moveDirection(float x, float y) {
 		if (Mathf.FloorToInt(x) != 0 || Mathf.FloorToInt(y) != 0) {
 			animator.SetFloat(idX, x);
 			animator.SetFloat(idY, y);

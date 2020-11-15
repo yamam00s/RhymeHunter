@@ -13,20 +13,20 @@ public class StartGameController : MonoBehaviour {
         audioSource = GetComponent<AudioSource>();
     }
 
-    public void OnClickStartButton() {
+    public void onClickStartButton() {
         audioSource.PlayOneShot(audioSource.clip);
         startButton.SetActive(false);
         selectDifficulty.SetActive(true);
     }
 
     // 0: Easy, 1: Normal, 2: Hard
-    public void OnClickSelectDifficulty(int selectedDifficulty) {
+    public void onClickSelectDifficulty(int selectedDifficulty) {
         audioSource.PlayOneShot(audioSource.clip);
         difficulty = selectedDifficulty;
         SceneManager.LoadScene("Main");
     }
 
-    public static int GetDifficulty(){
+    public static int getDifficulty(){
 		return difficulty;
 	}
 }

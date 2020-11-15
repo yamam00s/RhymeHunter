@@ -2,9 +2,8 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ReturnGameController : MonoBehaviour {
+public class ResultGameController : MonoBehaviour {
     public Text resultStatusText;
-    public Text resultText;
 
     void Start() {
         if (MainController.getIsGameClear()) {
@@ -14,7 +13,7 @@ public class ReturnGameController : MonoBehaviour {
         }
     }
 
-    void OnClickReturnGame() {
+    public void onClickReturnGame() {
         SceneManager.LoadScene("Title");
     }
 }

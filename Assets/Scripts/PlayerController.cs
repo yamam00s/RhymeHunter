@@ -24,24 +24,24 @@ public class PlayerController : MonoBehaviour {
         if (x == 0 && y == 0) {
             return;
         }
-        Mortion.MoveDirection(x, y);
+        Mortion.moveDirection(x, y);
         Vector2 direction;
 
         if (Input.GetKey(KeyCode.RightArrow)) {
             direction = new Vector2(1f, 0);
-            MovePlayer(direction);
+            movePlayer(direction);
 		}
 		if (Input.GetKey(KeyCode.LeftArrow)) {
             direction = new Vector2(-1f, 0);
-            MovePlayer(direction);
+            movePlayer(direction);
 		}
 		if (Input.GetKey(KeyCode.UpArrow)) {
             direction = new Vector2(0, 1f);
-            MovePlayer(direction);
+            movePlayer(direction);
 		}
 		if (Input.GetKey(KeyCode.DownArrow)) {
             direction = new Vector2(0, -1f);
-            MovePlayer(direction);
+            movePlayer(direction);
 		}
     }
 
@@ -59,7 +59,7 @@ public class PlayerController : MonoBehaviour {
         SceneManager.LoadScene("Result");
     }
 
-    void MovePlayer(Vector2 direction) {
+    void movePlayer(Vector2 direction) {
         nowPosition = rb2D.transform.position;
         Vector2 force = nowPosition + direction;
         rb2D.transform.position = force;

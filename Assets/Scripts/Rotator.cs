@@ -6,7 +6,7 @@ public class Rotator : MonoBehaviour {
 
     void Update() {
         // 難易度Headの場合は回転させる
-        if (StartGameController.GetDifficulty() == 2) {
+        if (StartGameController.getDifficulty() == 2) {
             transform.Rotate(new Vector3(0, 0, 500) * Time.deltaTime);
         }
     }

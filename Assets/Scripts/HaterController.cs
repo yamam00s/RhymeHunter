@@ -35,6 +35,7 @@ public class HaterController : MonoBehaviour {
 		float y = Input.GetAxisRaw("Vertical");
         Mortion.MoveDirection(x, y);
 
+        // 一定時間ごとにプレイヤーに近づく
         currentTime += Time.deltaTime;
         if (currentTime > spanTime) {
             currentTime = 0f;
@@ -48,7 +49,7 @@ public class HaterController : MonoBehaviour {
             return;
         }
 
-        MainController.isGameClear = false;
+        MainController.setIsGameClear(false);
         SceneManager.LoadScene("Result");
     }
 }

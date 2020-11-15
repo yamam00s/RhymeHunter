@@ -51,10 +51,10 @@ public class PlayerController : MonoBehaviour {
         }
 
         string getAnsweText = collisionInfo.gameObject.GetComponent<Text>().text;
-        if (getAnsweText == MainController.correctLyric) {
-            MainController.isGameClear = true;
+        if (getAnsweText == MainController.getCorrectLyric()) {
+            MainController.setIsGameClear(true);
         } else {
-            MainController.isGameClear = false;
+            MainController.setIsGameClear(false);
         }
         SceneManager.LoadScene("Result");
     }

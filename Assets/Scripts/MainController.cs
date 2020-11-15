@@ -19,7 +19,6 @@ public class MainController : MonoBehaviour {
     public static string correctLyric;
     public static bool isGameClear;
 
-
     // Start is called before the first frame update
     void Start() {
         JsonQuizClass inputQuizJson = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
@@ -34,7 +33,14 @@ public class MainController : MonoBehaviour {
         correctLyric = inputQuizJson.correctLyric;
     }
 
-    // // Update is called once per frame
-    // void Update() {
-    // }
+    public static string getCorrectLyric() {
+		return correctLyric;
+	}
+
+    public static void setIsGameClear(bool isGameClear) {
+		isGameClear = isGameClear;
+	}
+    public static bool getIsGameClear() {
+		return isGameClear;
+	}
 }

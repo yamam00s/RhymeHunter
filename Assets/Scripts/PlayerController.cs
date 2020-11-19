@@ -52,9 +52,9 @@ public class PlayerController : MonoBehaviour {
 
         string getAnsweText = collisionInfo.gameObject.GetComponent<Text>().text;
         if (getAnsweText == MainController.getCorrectLyric()) {
-            MainController.setIsGameClear(true);
+            MainController.addClearQuiz();
         } else {
-            MainController.setIsGameClear(false);
+            MainController.addClearQuiz();
         }
         MainController.setResultLyric(getAnsweText);
         SceneManager.LoadScene("Result");

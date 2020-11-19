@@ -55,7 +55,6 @@ public class HaterController : MonoBehaviour {
             return;
         }
 
-        MainController.setIsGameClear(false);
         SceneManager.LoadScene("Result");
     }
 }

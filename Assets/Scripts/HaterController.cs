@@ -25,7 +25,7 @@ public class HaterController : MonoBehaviour {
         if (StartGameController.getDifficulty() == 2) {
             spanTime = 1f;
         } else {
-            spanTime = 3f;
+            spanTime = 2f;
         }
     }
 

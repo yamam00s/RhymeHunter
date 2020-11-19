@@ -23,7 +23,7 @@ public class HaterController : MonoBehaviour {
 
         // 難易度で敵の速度変更
         if (StartGameController.getDifficulty() == 2) {
-            spanTime = 2f;
+            spanTime = 1f;
         } else {
             spanTime = 3f;
         }
@@ -40,7 +40,13 @@ public class HaterController : MonoBehaviour {
         if (currentTime > spanTime) {
             currentTime = 0f;
             Vector2 playerPosition = player.transform.position;
-            transform.position = Vector2.MoveTowards(transform.position, playerPosition, 1);
+            // 難易度で敵の速度変更
+            if (StartGameController.getDifficulty() == 2) {
+                transform.position = Vector2.MoveTowards(transform.position, playerPosition, 3);
+
+            } else {
+                transform.position = Vector2.MoveTowards(transform.position, playerPosition, 1);
+            }
         }
     }
 

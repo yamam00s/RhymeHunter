@@ -54,10 +54,8 @@ public class PlayerController : MonoBehaviour {
         if (getAnsweText == MainController.getCorrectLyric()) {
             MainController.addClearQuiz();
         } else {
-            MainController.addClearQuiz();
+            SceneManager.LoadScene("Result");
         }
-        MainController.setResultLyric(getAnsweText);
-        SceneManager.LoadScene("Result");
     }
 
     void movePlayer(Vector2 direction) {

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class JsonQuizItem {
@@ -22,48 +23,61 @@ public class MainController : MonoBehaviour {
     public TextAsset quizCsvJson;
     public Text topLyricText;
     public Text bottomLyricText;
-    public GameObject answers;
+    public GameObject answers1;
+    public GameObject answers2;
     public GameObject haters;
     public static string correctLyric;
     public static int clearQuiz;
     public static string resultLyric;
     private JsonQuizClass inputQuizJson;
+    private bool isChangedQuiz;
 
     // Start is called before the first frame update
     void Start() {
+        isChangedQuiz = false;
         clearQuiz = 0;
-        JsonQuizClass inputQuizJson = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
+        inputQuizJson = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
         setLyricText(inputQuizJson.quiz1);
-        resultLyric = topLyricText.text + "\n" + bottomLyricText.text;
         // 難易度Headの場合はhaters出現
         if (StartGameController.getDifficulty() == 2) {
             haters.SetActive(true);
         }
+        setAnswersText(answers1, inputQuizJson.quiz1);
+        setAnswersText(answers2, inputQuizJson.quiz2);
     }
 
     void Update() {
-
+        if (clearQuiz == 1 && !isChangedQuiz) {
+            setLyricText(inputQuizJson.quiz2);
+            answers1.SetActive(false);
+            answers2.SetActive(true);
+            isChangedQuiz = true;
+        }
+        if (clearQuiz == 2) {
+            SceneManager.LoadScene("Result");
+        }
     }
 
-    private void setLyricText(JsonQuizItem inputQuizJson) {
-        topLyricText.text = inputQuizJson.topLyric;
-        bottomLyricText.text = inputQuizJson.bottomLyric;
+    public void setAnswersText(GameObject answers, JsonQuizItem inputQuizJson) {
         Text[] answersText = answers.GetComponentsInChildren<Text>();
         int index = 0;
         foreach(Text answer in answersText) {
             answer.text = inputQuizJson.answersLyric[index];
             index++;
         }
+    }
+
+    public void setLyricText(JsonQuizItem inputQuizJson) {
+        topLyricText.text = inputQuizJson.topLyric;
+        bottomLyricText.text = inputQuizJson.bottomLyric;
         correctLyric = inputQuizJson.correctLyric;
+        resultLyric += inputQuizJson.topLyric + "\n" + inputQuizJson.bottomLyric + inputQuizJson.correctLyric;
     }
 
     public static string getCorrectLyric() {
 		return correctLyric;
 	}
 
-    public static void setResultLyric(string selectedLyric) {
-		resultLyric += selectedLyric;
-	}
     public static string getResultLyric() {
 		return resultLyric;
 	}
@@ -72,6 +86,6 @@ public class MainController : MonoBehaviour {
 		clearQuiz++;
 	}
     public static bool getIsGameClear() {
-		return clearQuiz == 1;
+		return clearQuiz == 2;
 	}
 }

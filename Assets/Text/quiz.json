@@ -1,6 +1,14 @@
 {
-  "topLyric": "俺は差し馬爆走中 Im' a ダークホース I feel so good!",
-  "bottomLyric": "音乗りながら韻踏みまくろう 威力さながら",
-  "answersLyric": ["ディープインパクト", "マキバオー", "　バズーカ砲", "ロケットランチャー"],
-  "correctLyric": "ディープインパクト"
+  "quiz1": {
+    "topLyric": "クソゲー大会トップランカー のつもりで書く題材へのアンサー",
+    "bottomLyric": "レペゼンスマパスヤマモトショウタ 商売二の次で",
+    "answersLyric": ["teatime", "commit", "pull request", "showtime"],
+    "correctLyric": "showtime"
+  },
+  "quiz2": {
+    "topLyric": "あいにく差し馬爆走中 Im' a ダークホース I　feel so good!",
+    "bottomLyric": "音乗りながら韻踏みまくろう 威力さながら",
+    "answersLyric": ["ディープインパクト", "マキバオー", "　バズーカ砲", "ロケットランチャー"],
+    "correctLyric": "ディープインパクト"
+  }
 }

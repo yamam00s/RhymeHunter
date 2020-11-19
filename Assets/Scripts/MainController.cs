@@ -16,6 +16,7 @@ public class MainController : MonoBehaviour {
     public Text topLyricText;
     public Text bottomLyricText;
     public GameObject answers;
+    public GameObject haters;
     public static string correctLyric;
     public static bool isGameClear;
     public static string resultLyric;
@@ -33,6 +34,10 @@ public class MainController : MonoBehaviour {
         }
         correctLyric = inputQuizJson.correctLyric;
         resultLyric = topLyricText.text + "\n" + bottomLyricText.text;
+        // 難易度Headの場合はhaters出現
+        if (StartGameController.getDifficulty() == 2) {
+            haters.SetActive(true);
+        }
     }
 
     public static string getCorrectLyric() {

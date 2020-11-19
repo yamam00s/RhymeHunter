@@ -36,6 +36,7 @@ public class MainController : MonoBehaviour {
     void Start() {
         isChangedQuiz = false;
         clearQuiz = 0;
+        resultLyric = "";
         inputQuizJson = JsonUtility.FromJson<JsonQuizClass>(quizCsvJson.ToString());
         setLyricText(inputQuizJson.quiz1);
         // 難易度Headの場合はhaters出現
@@ -71,7 +72,7 @@ public class MainController : MonoBehaviour {
         topLyricText.text = inputQuizJson.topLyric;
         bottomLyricText.text = inputQuizJson.bottomLyric;
         correctLyric = inputQuizJson.correctLyric;
-        resultLyric += inputQuizJson.topLyric + "\n" + inputQuizJson.bottomLyric + inputQuizJson.correctLyric;
+        resultLyric += inputQuizJson.topLyric + "\n" + inputQuizJson.bottomLyric + inputQuizJson.correctLyric + "\n";
     }
 
     public static string getCorrectLyric() {

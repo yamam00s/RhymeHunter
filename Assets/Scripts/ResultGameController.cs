@@ -7,9 +7,9 @@ public class ResultGameController : MonoBehaviour {
     public Text resultLyricText;
 
     void Start() {
-        resultLyricText.text = MainController.getResultLyric();
         if (MainController.getIsGameClear()) {
             resultStatusText.text = "Game Clear";
+            resultLyricText.text = MainController.getResultLyric();
         } else {
             resultStatusText.text = "Game Over";
         }
